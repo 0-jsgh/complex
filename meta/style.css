@@ -1,0 +1,113 @@
+*{
+    padding: 0;margin: 0; font-family: Sans-Serif; text-decoration: none; box-sizing: border-box;
+}
+
+body{
+    background-color: #d5d5d5;
+}
+
+h1,h2{
+    padding: 0.4cm 0.2cm;
+}
+
+h1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+    background: white;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: center;
+    font-size: 0.5cm;
+    border: 2px solid black;
+    padding: 0.4cm 0;
+}
+
+iframe{
+    border: none;
+    height: 90vh;
+}
+
+form{
+    padding: 0 1cm;
+    padding-bottom: 1cm;
+    font-size: 0.5cm;
+    border:2px solid black;
+    border-left: none;
+    border-right:none;
+}
+
+label,input,button{
+    font-size: 0.5cm;
+    border:0px solid black;
+    display: block;
+}
+
+label{
+    margin: 0.2cm 0;
+}
+
+input{
+    border: 1px solid black;
+    width: 100%;
+    padding:0.2cm;
+}
+
+button{
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 0.4cm;
+    padding: 0.2cm;
+}
+
+button:hover{
+    border: 1px white black;
+    background: black;
+    color:white;
+}
+
+
+form p{
+    background: white;
+    border:2px solid black;
+    min-height: 1cm;
+    padding: 0.25cm;
+}
+
+form div{
+    margin-bottom: 0.4cm;
+    width: 50%;
+    float: left;
+    display: inline-block;
+}
+
+form select{
+    width: 100%;
+    background-color: white;
+    padding: 0.2cm;
+    font-size: 0.5cm;
+    margin-bottom: 0.4cm;
+}
+
+@media screen and (max-width: 15cm) {
+    form div{
+        width: 100%;
+        float: none;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    form div{
+        width: 100%;
+        float: none;
+        display: block;
+    }
+
+}
