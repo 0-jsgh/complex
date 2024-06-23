@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Números Complejos</title>
+    <script defer src="../meta/script-01.js"></script>
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <h1>Operaciones</h1>
+
+    <form id="rectangular-form">
+        <h2>Formato Rectangular</h2>
+        <div>
+            <label for="real1">Parte Real 1 (a): </label>
+            <input type="number" id="real1" name="real1" step="any" required>
+            <label for="imaginary1">Parte Imaginaria 1 (b): </label>
+            <input type="number" id="imaginary1" name="imaginary1" step="any" required>
+        </div>
+        <div>
+            <label for="real2">Parte Real 2 (a): </label>
+            <input type="number" id="real2" name="real2" step="any" required>
+            <label for="imaginary2">Parte Imaginaria 2 (b): </label>
+            <input type="number" id="imaginary2" name="imaginary2" step="any" required>
+        </div>
+        <select id="operation-rectangular" name="operation">
+            <option value="sum">Suma</option>
+            <option value="subtract">Resta</option>
+            <option value="multiply">Multiplicación</option>
+            <option value="divide">División</option>
+        </select>
+        <button type="submit">Calcular</button>
+        <p id="rectangular-result">0 + 0i</p>
+    </form>
+    
+
+    <form id="polar-form">
+        <h2>Formato Polar</h2>
+        <div>
+            <label for="magnitude1">Magnitud 1 (r): </label>
+            <input type="number" id="magnitude1" name="magnitude1" step="any" required>
+            <label for="angle1">Ángulo 1 (θ): </label>
+            <input type="number" id="angle1" name="angle1" step="any" required>
+        </div>
+        <div>
+            <label for="magnitude2">Magnitud 2 (r): </label>
+            <input type="number" id="magnitude2" name="magnitude2" step="any" required>
+            <label for="angle2">Ángulo 2 (θ): </label>
+            <input type="number" id="angle2" name="angle2" step="any" required>
+        </div>
+        <select id="operation-polar" name="operation">
+            <option value="sum">Suma</option>
+            <option value="subtract">Resta</option>
+            <option value="multiply">Multiplicación</option>
+            <option value="divide">División</option>
+        </select>
+        <button type="submit">Calcular</button>
+        <p id="polar-result">0 ∠ 0°</p>
+    </form>
+    
+</body>
+</html>

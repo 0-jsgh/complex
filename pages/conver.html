@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Números Complejos</title>
+    <script defer src="../meta/script-00.js"></script>
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <h1>Convertir</h1>
+    
+    
+    <form id="polar-form">
+    <h2>Polar a Rectangular</h2>
+        
+        <div>
+            <label for="magnitud">Magnitud (r): </label>
+            <input type="number" id="magnitud" name="magnitud" step="any" required>
+        </div>
+        
+        <div>
+            <label for="angulo">Ángulo (θ): </label>
+            <input type="number" id="angulo" name="angulo" step="any" required>
+        </div>
+        
+        <button type="submit">Convertir</button>
+        <p id="rectangular-result">0 + 0i</p>
+    </form>
+    
+
+    <form id="rectangular-form">
+    <h2>Rectangular a Polar</h2>
+    <div>
+        <label for="real">Parte Real (a): </label>
+        <input type="number" id="real" name="real" step="any" required>
+    </div>
+    <div>
+        <label for="imaginary">Parte Imaginaria (b): </label>
+        <input type="number" id="imaginary" name="imaginary" step="any" required>
+    </div>
+        <button type="submit">Convertir</button>
+        <p id="polar-result">0 ∠ 0°</p>
+    </form>
+    
+</body>
+</html>
