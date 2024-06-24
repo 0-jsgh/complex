@@ -73,9 +73,9 @@ button:hover{
 
 
 form p{
+    border-radius:0.2cm;
     background: white;
     border:2px solid black;
-    min-height: 1cm;
     padding: 0.25cm;
 }
 
