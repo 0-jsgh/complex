@@ -40,6 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultReal = (a1 * a2 + b1 * b2) / denom;
                 resultImaginary = (b1 * a2 - a1 * b2) / denom;
                 break;
+            case 'para':
+                // Z1 * Z2
+                const realMul = a1 * a2 - b1 * b2;
+                const imagMul = a1 * b2 + b1 * a2;
+                
+                // Z1 + Z2
+                const realSum = a1 + a2;
+                const imagSum = b1 + b2;
+                
+                // Z1 * Z2 / (Z1 + Z2)
+                const denomParallel = realSum * realSum + imagSum * imagSum;
+                resultReal = (realMul * realSum + imagMul * imagSum) / denomParallel;
+                resultImaginary = (imagMul * realSum - realMul * imagSum) / denomParallel;
+                break;
         }
         return { real: parseFloat(resultReal.toFixed(12)), imaginary: parseFloat(resultImaginary.toFixed(12)) };
     }
@@ -65,6 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'divide':
                 resultMagnitude = r1 / r2;
                 resultAngle = theta1 - theta2;
+                break;
+            case 'para':
+                // Z1 * Z2
+                const realMul = a1 * a2 - b1 * b2;
+                const imagMul = a1 * b2 + b1 * a2;
+                
+                // Z1 + Z2
+                const realSum = a1 + a2;
+                const imagSum = b1 + b2;
+                
+                // Z1 * Z2 / (Z1 + Z2)
+                const denomParallel = realSum * realSum + imagSum * imagSum;
+                resultReal = (realMul * realSum + imagMul * imagSum) / denomParallel;
+                resultImaginary = (imagMul * realSum - realMul * imagSum) / denomParallel;
                 break;
         }
         return { magnitude: parseFloat(resultMagnitude.toFixed(12)), angle: parseFloat(resultAngle.toFixed(12)) };
