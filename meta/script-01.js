@@ -108,7 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const operation = document.getElementById('operation-rectangular').value;
 
         const result = operateRectangular(real1, imaginary1, real2, imaginary2, operation);
-        rectangularResult.textContent = `${result.real} + ${result.imaginary}i`;
+        if (result.imaginary>0){
+            rectangularResult.textContent = `${result.real} +${result.imaginary}i`;
+        }
+        else{
+            rectangularResult.textContent = `${result.real} -${-result.imaginary}i`;    
+        }
     });
 
     // Manejar el formulario de operaciones en formato polar
