@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const parteReal = magnitud * Math.cos(anguloRad);
         const parteImaginaria = magnitud * Math.sin(anguloRad);
 
-        rectangularResult.textContent = `${parseFloat(parteReal.toFixed(12))} + ${parseFloat(parteImaginaria.toFixed(12))}i`;
+        if (parteImaginaria>0){
+            rectangularResult.textContent = `${parseFloat(parteReal.toFixed(12))} +${parseFloat(parteImaginaria.toFixed(12))}i`;
+        }
+        else{
+            rectangularResult.textContent = `${parseFloat(parteReal.toFixed(12))} -${parseFloat(-parteImaginaria.toFixed(12))}i`;  
+        };
     });
 
     // Convertir de rectangular a polar
