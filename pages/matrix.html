@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Ecuaciones</title>
+    <link rel="stylesheet" href="../meta/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .matrix-input {
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Sistemas de Ecuaciones</h1>
+    <div class="m">
+    <div class="matriz">
+        <label for="matrixSize">Tamaño de la matriz:</label>
+        <select id="matrixSize">
+            <option value="2">2x2=R</option>
+            <option value="3">3x3=R</option>
+            <option value="4">4x4=R</option>
+        </select>
+    </div>
+    <div id="matrixContainer"></div>
+    <button onclick="solve()">Resolver</button>
+    <div class="result" id="resultContainer"></div>
+    <script src="../meta/matrix.js"></script>
+    <script src="../meta/matri0.js"></script>
+    </div>
+</body>
+</html>
