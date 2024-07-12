@@ -135,6 +135,14 @@ select{
     margin: 0 1cm;
 }
 
+.end{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #d5d5d5;
+}
+
 @media screen and (max-width: 15cm) {
     form div{
         width: 100%;
