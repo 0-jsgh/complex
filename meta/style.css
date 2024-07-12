@@ -19,7 +19,7 @@ a{
     color:black;
     background: white;
     display: inline-block;
-    width: 50%;
+    width: 33.33%;
     float: left;
     text-align: center;
     font-size: 0.5cm;
@@ -39,6 +39,11 @@ form{
     border:2px solid black;
     border-left: none;
     border-right:none;
+}
+
+.m{
+    border: 2px solid black;
+    padding: 0.5cm 0;
 }
 
 label,input,button{
@@ -72,11 +77,12 @@ button:hover{
 }
 
 
-form p{
-    border-radius:0.2cm;
+form p, .result{
     background: white;
     border:2px solid black;
+    min-height: 1cm;
     padding: 0.25cm;
+    border-radius:0.2cm;
 }
 
 form div{
@@ -86,12 +92,47 @@ form div{
     display: inline-block;
 }
 
-form select{
+select{
     width: 100%;
     background-color: white;
     padding: 0.2cm;
     font-size: 0.5cm;
     margin-bottom: 0.4cm;
+}
+
+#matrixContainer {
+    float: none;
+    width: 100%; padding: 0 0;
+    display:inline-block;
+    
+    margin-bottom: 0.5cm;
+}
+
+#matrixContainer div{
+    margin: 0; padding: 0 1cm;
+    display: inline-block;
+    float: none;
+}
+
+.matrix-input{
+    width: 100%;
+}
+
+.matrix-input input{
+    float: left;
+    border-radius:0.2cm;
+    width: 20%;
+}
+
+.matriz{
+    font-size: 0.5cm;
+    margin: 0 1cm;
+    width: auto;
+}
+
+.result{
+    font-size: 0.5cm;
+    margin: 0 1cm;
 }
 
 @media screen and (max-width: 15cm) {
