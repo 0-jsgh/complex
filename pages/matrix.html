@@ -2,22 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../meta/logo.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistemas de Ecuaciones</title>
     <link rel="stylesheet" href="../meta/style.css">
 </head>
 <body>
-    
     <h1>Sistemas de Ecuaciones</h1>
     <div class="m">
     <div class="matriz">
         <label for="matrixSize">Tamaño de la matriz:</label>
-        <select id="matrixSize">
-            <option value="2">2x2=R</option>
-            <option value="3">3x3=R</option>
-            <option value="4">4x4=R</option>
-        </select>
+        <input type="number" id="matrixSize" min="2" value="2">
+        <button onclick="createMatrixInput()">Crear Matriz</button>
     </div>
     <div id="matrixContainer"></div>
     <button onclick="solve()">Resolver</button>
