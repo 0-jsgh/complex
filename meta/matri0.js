@@ -1,7 +1,8 @@
 // script.js
 
 // Función para crear la entrada de la matriz según el tamaño seleccionado
-function createMatrixInput(size) {
+function createMatrixInput() {
+    const size = parseInt(document.getElementById('matrixSize').value);
     const container = document.getElementById('matrixContainer');
     container.innerHTML = '';
 
@@ -12,13 +13,13 @@ function createMatrixInput(size) {
             const input = document.createElement('input');
             input.type = 'text';
             input.id = `matrix-${i}-${j}`;
-            input.placeholder = `a${i+1}${j+1}`;
+            input.placeholder = String.fromCharCode(97 + j) + (i + 1); // a1, a2, a3, ..., b1, b2, b3, ...
             row.appendChild(input);
         }
         const resultInput = document.createElement('input');
         resultInput.type = 'text';
         resultInput.id = `result-${i}`;
-        resultInput.placeholder = `R${i+1}`;
+        resultInput.placeholder = `R${i + 1}`;
         row.appendChild(resultInput);
         container.appendChild(row);
     }
@@ -27,7 +28,12 @@ function createMatrixInput(size) {
 // Función para obtener el valor de una entrada de la matriz como número complejo
 function getComplexValue(id) {
     const value = document.getElementById(id).value.trim();
-    return math.complex(value);
+    try {
+        return math.complex(value);
+    } catch (e) {
+        alert(`Error en la entrada de valor complejo: ${value}`);
+        throw e;
+    }
 }
 
 // Función para clonar una matriz
@@ -74,18 +80,11 @@ function solve() {
         solution.push(math.divide(detAi, detA));
     }
 
-    // Mostrar resultados
+    // Mostrar resultados en orden alfabético
     const resultContainer = document.getElementById('resultContainer');
-    resultContainer.innerHTML = `<p>det(A): ${detA}</p>`;
+    resultContainer.innerHTML = `<p>det(M): ${detA}</p>`;
     solution.forEach((val, index) => {
-        resultContainer.innerHTML += `<p>X${index + 1} = ${val}</p>`;
+        const variableName = String.fromCharCode(65 + index); // A, B, C, D, ...
+        resultContainer.innerHTML += `<p>${variableName} = ${val}</p>`;
     });
 }
-
-// Evento para actualizar la entrada de la matriz según el tamaño seleccionado
-document.getElementById('matrixSize').addEventListener('change', (event) => {
-    createMatrixInput(parseInt(event.target.value));
-});
-
-// Inicializar con matriz 2x2
-createMatrixInput(2);
