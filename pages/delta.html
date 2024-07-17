@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <div class="matriz">
+    <h1>Delta-Estrella</h1>
+    <div>
+        <label for="conversionType">Tipo de conversión:</label>
+        <select id="conversionType">
+            <option value="deltaToStar">Delta a Estrella</option>
+            <option value="starToDelta">Estrella a Delta</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label for="impedance1">Impedancia 1 (Z1):</label>
+        <input type="text" id="impedance1" placeholder="a+bi">
+    </div>
+    <div class="input-group">
+        <label for="impedance2">Impedancia 2 (Z2):</label>
+        <input type="text" id="impedance2" placeholder="a+bi">
+    </div>
+    <div class="input-group">
+        <label for="impedance3">Impedancia 3 (Z3):</label>
+        <input type="text" id="impedance3" placeholder="a+bi">
+    </div>
+    <button onclick="convert()">Calcular</button>
+    <div class="result" id="resultContainer"></div>
+    </div>
+    <script src="../meta/matrix.js"></script>
+    <script src="../meta/delta.js"></script>
+</body>
+</html>
