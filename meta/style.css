@@ -151,6 +151,12 @@ select{
     background-color: #d5d5d5;
 }
 
+.bt{
+    position: fixed;
+    bottom: 0.5cm;
+    right: 0;
+}
+
 @media screen and (max-width: 15cm) {
     form div{
         width: 100%;
