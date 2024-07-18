@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="../meta/style.css">
 </head>
 <body>
+    
     <h1>Sistemas de Ecuaciones</h1>
     <div class="m">
     <div class="matriz">
         <label for="matrixSize">Tamaño de la matriz:</label>
         <input type="number" id="matrixSize" min="2" value="2">
-        <button onclick="createMatrixInput()">Crear Matriz</button>
     </div>
+    <div class="salt">
+    <button onclick="createMatrixInput()">Crear Matriz</button>
     <div id="matrixContainer"></div>
     <button onclick="solve()">Resolver</button>
+    </div>
     <div class="result" id="resultContainer"></div>
     <script src="../meta/matrix.js"></script>
     <script src="../meta/matri0.js"></script>
