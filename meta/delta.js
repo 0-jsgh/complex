@@ -51,8 +51,25 @@ function convert() {
         resultContainer.innerHTML += `<p>Zb: ${result.zb}</p>`;
         resultContainer.innerHTML += `<p>Zc: ${result.zc}</p>`;
     } else {
-        resultContainer.innerHTML += `<p>Za: ${result.z1}</p>`;
-        resultContainer.innerHTML += `<p>Zb: ${result.z2}</p>`;
-        resultContainer.innerHTML += `<p>Zc: ${result.z3}</p>`;
+        resultContainer.innerHTML += `<p>Z1: ${result.z1}</p>`;
+        resultContainer.innerHTML += `<p>Z2: ${result.z2}</p>`;
+        resultContainer.innerHTML += `<p>Z3: ${result.z3}</p>`;
     }
 }
+
+// Función para actualizar la imagen de la conversión
+function updateImage() {
+    const conversionType = document.getElementById('conversionType').value;
+    const imageElement = document.getElementById('conversionImage');
+
+    if (conversionType === 'deltaToStar') {
+        imageElement.src = '../img/delta/dts.svg';
+    } else {
+        imageElement.src = '../img/delta/std.svg';
+    }
+
+    imageElement.style.display = 'block';
+}
+
+// Inicializar la imagen al cargar la página
+updateImage();
