@@ -114,6 +114,11 @@ select{
     float: none;
 }
 
+.image-container img{
+    margin: 0 auto;
+    max-width: 60%;    
+}
+
 .matrix-input{
     width: 100%;
 }
@@ -128,6 +133,10 @@ select{
     font-size: 0.5cm;
     margin: 0 1cm;
     width: auto;
+}
+
+.salt{
+    margin: 0.5cm 0;
 }
 
 .result{
@@ -152,6 +161,11 @@ select{
     .matrix-input input{
     width: 20%;
     }
+    
+    .image-container img{
+    margin: 0 auto;
+    max-width: 100%;    
+}
 
 }
 
@@ -165,5 +179,10 @@ select{
     .matrix-input input{
     width: 20%;
     }
+    
+    .image-container img{
+    margin: 0 auto;
+    max-width: 100%;    
+}
 
 }
