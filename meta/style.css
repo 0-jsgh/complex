@@ -116,7 +116,7 @@ select{
 
 .image-container img{
     margin: 0 auto;
-    max-width: 60%;    
+    max-width: 90%;    
 }
 
 .matrix-input{
@@ -136,6 +136,7 @@ select{
 }
 
 .salt{
+    clear: both;
     margin: 0.5cm 0;
 }
 
@@ -157,6 +158,13 @@ select{
     right: 0;
 }
 
+.grand{
+    min-height: 50vh;
+    float: left;
+    width: 50%;
+    margin-bottom: 0.5cm;;
+}
+
 @media screen and (max-width: 15cm) {
     form div{
         width: 100%;
@@ -168,10 +176,11 @@ select{
     width: 20%;
     }
     
-    .image-container img{
-    margin: 0 auto;
-    max-width: 100%;    
-}
+    .grand{
+        min-height: 0;
+        margin: 0;
+        width: 100%;
+    }
 
 }
 
@@ -186,9 +195,10 @@ select{
     width: 20%;
     }
     
-    .image-container img{
-    margin: 0 auto;
-    max-width: 100%;    
-}
+    .grand{
+        min-height: 0;
+        margin: 0;
+        width: 100%;
+    }
 
 }
