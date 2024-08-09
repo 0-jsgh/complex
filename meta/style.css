@@ -19,11 +19,19 @@ a{
     color:black;
     background: white;
     display: inline-block;
+    border: 2px solid black;
+    font-size: 0.5cm;
+}
+
+a:hover{
+    background: black;
+    color: white;
+}
+
+.ind a{
     width: 33.33%;
     float: left;
     text-align: center;
-    font-size: 0.5cm;
-    border: 2px solid black;
     padding: 0.4cm 0;
 }
 
@@ -153,9 +161,10 @@ select{
 }
 
 .bt{
-    width:90%;
-    padding:0.2cm 0.4cm; margin:0.2cm auto;
-    display:inline-block;
+    width:80%;
+    display:block;
+    padding:0.2cm 0.4cm;
+    margin:0.2cm auto;
 }
 
 .grand{
