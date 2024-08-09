@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigonométrica</title>
+    <script src="../meta/funtion.js" defer></script>
+    <link rel="icon" href="../meta/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <h1>Trigonométrica</h1>
+    <form id="trigonometria-form">
+        <label for="amplitud">Amplitud:</label>
+        <input type="number" id="amplitud" name="amplitud" step="any" required><br><br>
+
+        <label for="funcion">Función:</label>
+        <select id="funcion" name="funcion">
+            <option value="sin">Sin</option>
+            <option value="cos">Cos</option>
+            <option value="tan">Tan</option>
+            <option value="cot">Cot</option>
+            <option value="sec">Sec</option>
+            <option value="csc">Csc</option>
+        </select><br><br>
+
+        <label for="angulo">Ángulo:</label>
+        <input type="number" id="angulo" name="angulo" step="any" required><br><br>
+
+        <label for="unidad">Unidad:</label>
+        <select id="unidad" name="unidad">
+            <option value="grados">Grados</option>
+            <option value="radianes">Radianes</option>
+            <option value="pi">Radianes (π)</option>
+        </select><br><br>
+
+        <button type="button" onclick="calcularTrigonometria()">Calcular</button>
+        <p id="resultado">Resultado: </p>
+    </form>
+    
+</body>
+</html>

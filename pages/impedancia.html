@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impedancia</title>
+    <script src="../meta/impedancia.js" defer></script>
+    <link rel="icon" href="../meta/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <h1>Impedancia</h1>
+    
+    <form id="impedancia-form">
+        <label for="valor">Valor del elemento:</label>
+        <input type="number" id="valor" name="valor" step="any" required>
+        <select id="valor-prefix">
+            <option value="1">Normal</option>
+            <option value="1000">k</option>
+            <option value="0.001">m</option>
+            <option value="0.000001">µ</option>
+            <option value="0.000000001">n</option>
+        </select><br><br>
+
+        <label for="tipo">Tipo de elemento:</label>
+        <select id="tipo" name="tipo">
+            <option value="resistencia">Resistencia (R)</option>
+            <option value="inductancia">Inductancia (L)</option>
+            <option value="capacitancia">Capacitancia (C)</option>
+        </select><br><br>
+
+        <label for="frecuencia">Frecuencia:</label>
+        <input type="number" id="frecuencia" name="frecuencia" step="any" required><br><br>
+
+        <label for="tipo-frecuencia">Tipo de frecuencia:</label>
+        <select id="tipo-frecuencia" name="tipo-frecuencia">
+            <option value="lineal">Frecuencia Lineal (f)</option>
+            <option value="angular">Frecuencia Angular (ω)</option>
+        </select><br><br>
+
+        <button type="button" onclick="calcularImpedancia()">Calcular</button>
+        <p id="resultado">Impedancia:</p>
+    </form>
+    
+</body>
+</html>

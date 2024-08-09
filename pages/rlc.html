@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito RLC</title>
+    <script src="../meta/circuito_rlc.js" defer></script>
+    <link rel="icon" href="../meta/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../meta/style.css">
+</head>
+<body>
+    <h1>RLC</h1>
+    <form id="rlc-form">
+        <label for="R">Resistencia (R):</label>
+        <input type="number" id="R" name="R" step="any" required>
+        <select id="R-prefix">
+            <option value="1">Ω</option>
+            <option value="1000">kΩ</option>
+            <option value="0.001">mΩ</option>
+        </select><br><br>
+
+        <label for="L">Inductancia (L):</label>
+        <input type="number" id="L" name="L" step="any" required>
+        <select id="L-prefix">
+            <option value="1">H</option>
+            <option value="0.001">mH</option>
+            <option value="0.000001">µH</option>
+            <option value="0.000000001">nH</option>
+        </select><br><br>
+
+        <label for="C">Capacitancia (C):</label>
+        <input type="number" id="C" name="C" step="any" required>
+        <select id="C-prefix">
+            <option value="1">F</option>
+            <option value="0.001">mF</option>
+            <option value="0.000001">µF</option>
+            <option value="0.000000001">nF</option>
+        </select><br><br>
+
+        <label for="tipo">Tipo de circuito:</label>
+        <select id="tipo" name="tipo">
+            <option value="1">Serie</option>
+            <option value="2">Paralelo</option>
+        </select><br><br>
+
+        <button type="button" onclick="calcularCircuito()">Calcular</button>
+        <p id="resultado"></p>
+    </form>
+    </body>
+</html>
