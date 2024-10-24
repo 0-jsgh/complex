@@ -60,43 +60,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Operaciones con números complejos en formato polar
     function operatePolar(r1, theta1, r2, theta2, operation) {
-        let resultMagnitude, resultAngle;
-        switch (operation) {
-            case 'sum':
-            case 'subtract':
-                // Convertir a rectangular para estas operaciones
-                const rect1 = polarToRectangular(r1, theta1);
-                const rect2 = polarToRectangular(r2, theta2);
-                const rectResult = operateRectangular(rect1.real, rect1.imaginary, rect2.real, rect2.imaginary, operation);
-                const polarResult = rectangularToPolar(rectResult.real, rectResult.imaginary);
-                resultMagnitude = polarResult.magnitude;
-                resultAngle = polarResult.angle;
-                break;
-            case 'multiply':
-                resultMagnitude = r1 * r2;
-                resultAngle = theta1 + theta2;
-                break;
-            case 'divide':
-                resultMagnitude = r1 / r2;
-                resultAngle = theta1 - theta2;
-                break;
-            case 'para':
-                // Z1 * Z2
-                const realMul = a1 * a2 - b1 * b2;
-                const imagMul = a1 * b2 + b1 * a2;
-                
-                // Z1 + Z2
-                const realSum = a1 + a2;
-                const imagSum = b1 + b2;
-                
-                // Z1 * Z2 / (Z1 + Z2)
-                const denomParallel = realSum * realSum + imagSum * imagSum;
-                resultReal = (realMul * realSum + imagMul * imagSum) / denomParallel;
-                resultImaginary = (imagMul * realSum - realMul * imagSum) / denomParallel;
-                break;
-        }
-        return { magnitude: parseFloat(resultMagnitude.toFixed(12)), angle: parseFloat(resultAngle.toFixed(12)) };
+    let resultMagnitude, resultAngle;
+    switch (operation) {
+        case 'sum':
+        case 'subtract':
+            // Convertir a rectangular para estas operaciones
+            const rect1 = polarToRectangular(r1, theta1);
+            const rect2 = polarToRectangular(r2, theta2);
+            const rectResult = operateRectangular(rect1.real, rect1.imaginary, rect2.real, rect2.imaginary, operation);
+            const polarResult = rectangularToPolar(rectResult.real, rectResult.imaginary);
+            resultMagnitude = polarResult.magnitude;
+            resultAngle = polarResult.angle;
+            break;
+        case 'multiply':
+            resultMagnitude = r1 * r2;
+            resultAngle = theta1 + theta2;
+            break;
+        case 'divide':
+            resultMagnitude = r1 / r2;
+            resultAngle = theta1 - theta2;
+            break;
+        case 'para':
+            // Convertir ambos a forma rectangular
+            const rect1Para = polarToRectangular(r1, theta1);
+            const rect2Para = polarToRectangular(r2, theta2);
+            
+            // Z1 * Z2
+            const realMul = rect1Para.real * rect2Para.real - rect1Para.imaginary * rect2Para.imaginary;
+            const imagMul = rect1Para.real * rect2Para.imaginary + rect1Para.imaginary * rect2Para.real;
+            
+            // Z1 + Z2
+            const realSum = rect1Para.real + rect2Para.real;
+            const imagSum = rect1Para.imaginary + rect2Para.imaginary;
+            
+            // Z1 * Z2 / (Z1 + Z2)
+            const denomParallel = realSum * realSum + imagSum * imagSum;
+            const resultReal = (realMul * realSum + imagMul * imagSum) / denomParallel;
+            const resultImaginary = (imagMul * realSum - realMul * imagSum) / denomParallel;
+            
+            // Convertir de nuevo a polar
+            const polarResultPara = rectangularToPolar(resultReal, resultImaginary);
+            resultMagnitude = polarResultPara.magnitude;
+            resultAngle = polarResultPara.angle;
+            break;
     }
+    return { magnitude: parseFloat(resultMagnitude.toFixed(12)), angle: parseFloat(resultAngle.toFixed(12)) };
+}
 
     // Manejar el formulario de operaciones en formato rectangular
     rectangularForm.addEventListener('submit', (e) => {
